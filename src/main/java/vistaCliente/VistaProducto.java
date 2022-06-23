@@ -14,7 +14,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author mlata
  */
-public class VistaProducto extends javax.swing.JFrame {
+public class VistaProducto extends javax.swing.JInternalFrame {
     DefaultTableModel producto; 
     /**
      * Creates new form VistaProducto

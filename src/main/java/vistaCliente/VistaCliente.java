@@ -15,7 +15,7 @@ import javax.swing.table.TableModel;
  *
  * @author mlata
  */
-public class VistaCliente extends javax.swing.JFrame {
+public class VistaCliente extends javax.swing.JInternalFrame  {
     DefaultTableModel modelo;
     /**
      * Creates new form NewJFrame

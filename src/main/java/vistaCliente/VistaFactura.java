@@ -11,7 +11,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author mlata
  */
-public class VistaFactura extends javax.swing.JFrame {
+public class VistaFactura extends javax.swing.JInternalFrame   {
     DefaultTableModel factura; 
     /**
      * Creates new form VistaFactura1
