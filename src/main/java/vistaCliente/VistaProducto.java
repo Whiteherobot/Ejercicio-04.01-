@@ -323,7 +323,8 @@ public class VistaProducto extends javax.swing.JInternalFrame {
 
         costo.setText("");
         nombre.setText("");
-        direccion.setText("");        // TODO add your handling code here:
+        direccion.setText("");
+        JOptionPane.showMessageDialog(null, "Ingreso exitoso!!!");           // TODO add your handling code here:
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -332,7 +333,7 @@ public class VistaProducto extends javax.swing.JInternalFrame {
         if(fila>=0){
             producto.removeRow(fila);
         }else{
-            JOptionPane.showMessageDialog(null, "Seleccionar Fila Porfavor!!!!");
+            JOptionPane.showMessageDialog(null, "Seleccionar Fila porfa!!!");
         }        // TODO add your handling code here:
 
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -348,13 +349,15 @@ public class VistaProducto extends javax.swing.JInternalFrame {
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         int fila=Integer.parseInt(txtfilas.getText());
         int columna=Integer.parseInt(txtcolumnas.getText());
-        producto.setValueAt(txtnuevotexto3.getText(), fila, columna);        // TODO add your handling code here:
+        producto.setValueAt(txtnuevotexto3.getText(), fila, columna);
+        JOptionPane.showMessageDialog(null, "Modificacion exitosa!!!");        // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         int fila =tabla.getRowCount();
         for (int i = fila-1; i >= 0; i--) {
             producto.removeRow(i);
+            JOptionPane.showMessageDialog(null, "Se a removido todos los datos!!!");   
         }        // TODO add your handling code here:
     }//GEN-LAST:event_jButton4ActionPerformed
 

@@ -293,6 +293,7 @@ public class VistaCliente extends javax.swing.JInternalFrame  {
         csi.setText("");
         cno.setText("");
         cst.setText("");
+        JOptionPane.showMessageDialog(null, "Ingreso exitoso!!!");
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -316,6 +317,7 @@ public class VistaCliente extends javax.swing.JInternalFrame  {
         int fila =tabla.getRowCount();
         for (int i = fila-1; i >= 0; i--) {
             modelo.removeRow(i);
+            JOptionPane.showMessageDialog(null, "Se a removido todos los datos!!!");
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
@@ -323,6 +325,7 @@ public class VistaCliente extends javax.swing.JInternalFrame  {
         int fila=Integer.parseInt(txtfila.getText());
         int columna=Integer.parseInt(txtcolumna.getText());
         modelo.setValueAt(txtnuevodato1.getText(), fila, columna);
+        JOptionPane.showMessageDialog(null, "Modificacion exitosa!!!");
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void txtcolumnaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtcolumnaActionPerformed
