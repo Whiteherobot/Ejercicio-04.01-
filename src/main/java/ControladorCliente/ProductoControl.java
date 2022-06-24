@@ -20,8 +20,19 @@ public class ProductoControl {
         this.facturaServicio.crear(producto);
         return producto;
     }
+    public Producto buscarFactura(String arg){
+        return this.facturaServicio.buscarPorCodigo(Integer.valueOf(arg));
+    }
+    public Producto eliminar (String arg){
+        return this.facturaServicio.eliminar(Integer.valueOf(arg));
+    }
     
     public List<Producto> listar(){
         return this.facturaServicio.listar();
+    }
+        public Producto modificar(String[] args) {
+        Producto facturaNuevo = new Producto(Integer.valueOf(args[0]),args[1],args[2]);
+        this.facturaServicio.modificar(Integer.valueOf(args[0]), facturaNuevo);
+        return facturaNuevo;
     }
 }
