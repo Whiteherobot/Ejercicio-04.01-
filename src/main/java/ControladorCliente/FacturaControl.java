@@ -35,8 +35,7 @@ public class FacturaControl {
     }
 
     public Factura modificar(String[] args) {
-       Cliente cliente = this.clienteServicio.buscarPorCodigo(Integer.valueOf(args[4]));
-        Factura facturaNuevo = new Factura(Integer.valueOf(args[0]),args[1],args[2],cliente);
+        Factura facturaNuevo = new Factura(Integer.valueOf(args[0]),args[1],args[2]);
         this.facturaServicio.modificar(Integer.valueOf(args[0]), facturaNuevo);
         return facturaNuevo;
     }

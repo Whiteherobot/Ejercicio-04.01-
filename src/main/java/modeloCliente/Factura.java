@@ -7,7 +7,7 @@ package modeloCliente;
 /**
  *
  * @author mlata
- */
+ */                                              
 public class Factura {
     
     private int codigo;
@@ -41,6 +41,10 @@ public class Factura {
 
     public Factura(Producto producto) {
         this.producto = producto;
+    }
+
+    public Factura(int codigo, String nombre, int numero) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
     
 

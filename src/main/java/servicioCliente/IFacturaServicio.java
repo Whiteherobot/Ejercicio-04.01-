@@ -4,6 +4,7 @@
  */
 package servicioCliente;
 
+import java.io.IOException;
 import java.util.List;
 import modeloCliente.Factura;
 
@@ -18,5 +19,6 @@ public interface IFacturaServicio {
     public Factura modificar(int codigoFactura, Factura facturaNueva);
     public int buscarposicion(Factura factura);
     public Factura buscarPorCodigo(int codigoFactura);
-    
+    public List<Factura> recuperarDeArchivo(String rutaArchivo)throws IOException;
+    public boolean almacenarEnArchivo(Factura factura,String rutaArchivo)throws IOException; 
 }

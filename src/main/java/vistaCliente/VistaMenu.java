@@ -6,12 +6,13 @@ package vistaCliente;
 
 import javax.swing.JInternalFrame;
 
+
 /**
  *
  * @author morti
  */
 public class VistaMenu extends javax.swing.JFrame {
-
+ int xMouse, yMouse;
     /**
      * Creates new form VentanaBarcoCapitan
      */
@@ -123,6 +124,16 @@ public class VistaMenu extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
+        var createFactura = new VistaFactura();
+        createFactura.setIconifiable(true);
+        createFactura.setClosable(true);
+        createFactura.setResizable(true);
+        this.jDesktopPane1.add(createFactura);
+        createFactura.setVisible(true);
+        createFactura.setDefaultCloseOperation(JInternalFrame.DISPOSE_ON_CLOSE);
+    }//GEN-LAST:event_jMenuItem5ActionPerformed
+
     private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
         var createProducto = new VistaProducto();
         createProducto.setIconifiable(true);
@@ -142,16 +153,6 @@ public class VistaMenu extends javax.swing.JFrame {
         createCliente.setVisible(true);
         createCliente.setDefaultCloseOperation(JInternalFrame.DISPOSE_ON_CLOSE);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
-
-    private void jMenuItem5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem5ActionPerformed
-        var createFactura = new VistaFactura();
-        createFactura.setIconifiable(true);
-        createFactura.setClosable(true);
-        createFactura.setResizable(true);
-        this.jDesktopPane1.add(createFactura);
-        createFactura.setVisible(true);
-        createFactura.setDefaultCloseOperation(JInternalFrame.DISPOSE_ON_CLOSE);
-    }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     /**
      * @param args the command line arguments

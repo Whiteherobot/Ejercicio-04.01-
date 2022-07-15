@@ -4,6 +4,7 @@
  */
 package servicioCliente;
 
+import java.nio.file.Files;
 import java.util.ArrayList;
 import java.util.List;
 import modeloCliente.Cliente;
@@ -17,27 +18,48 @@ public class ClienteServicio implements IClienteServicio {
 
     @Override
     public Cliente crear(Cliente cliente) {
+        if (exist(cliente.getCodigo(), cliente.getNombre()) == false)
+        { 
         this.clienteList.add(cliente);
         return cliente;
     }
-
+    else
+    {
+        throw new RuntimeException("Ya existe un Usuario con este código.");
+    }
+    }
     @Override
     public Cliente eliminar(int codigoCliente) {
+        if (exist(codigoCliente) == true)
+        {
         Cliente cliente = this.buscarPorCodigo(codigoCliente);
         var posicion= this.buscarPorCodigo(codigoCliente);
         this.listar().remove(posicion);
         return cliente;
+         }
+        else
+        {
+            throw new RuntimeException("No se ha encontrado un Usuario con ese código");
+        }
+
 
     }
 
     @Override
     public Cliente modificar(int codigoCliente, Cliente clienteNuevo) {
+         if (exist(codigoCliente) == true)
+        {
        var posicion = this.buscarposicion(this.buscarPorCodigo(codigoCliente));
        this.listar().get(posicion).setCodigo(clienteNuevo.getCodigo());
        this.listar().get(posicion).setApellido(clienteNuevo.getApellido());
        this.listar().get(posicion).setNombre(clienteNuevo.getNombre());
        
        return clienteNuevo;
+        }
+        else
+        {
+            throw new RuntimeException("No se ha encontrado un Cliente con ese código");
+        }
     
     }
 
@@ -69,7 +91,37 @@ public class ClienteServicio implements IClienteServicio {
     public List<Cliente> listar() {
         return this.clienteList;
     }
-    
+     public boolean exist(int codigo, String nombre)
+    {
+        boolean result = false;
+        for (Cliente c : clienteList)
+        {
+            if (c.getCodigo() == codigo)
+            {
+                result = true;
+                break; 
+            }
+            else if (c.getNombre().equals(nombre))
+            {
+                result  = true;
+                break;
+            }
+        }
+        return result;
+    }
+      public boolean exist(int codigo)
+    {
+        boolean result = false;
+        for (Cliente c : clienteList)
+        {
+            if (c.getCodigo() == codigo)
+            {
+                result = true;
+                break; 
+            }            
+        }
+        return result;
+    }
 
 
 

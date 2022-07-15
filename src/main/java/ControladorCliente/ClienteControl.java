@@ -35,4 +35,13 @@ public class ClienteControl {
         this.clienteServicio.modificar(Integer.valueOf(args[0]), clienteNuevo);
         return clienteNuevo;
     }
+    private int convertirEntero(String numero){
+        try{
+            return Integer.valueOf(numero);
+        }catch(NumberFormatException e){
+            throw new RuntimeException("El campo ingrsado solomanete recibe"+ "numeros");
+        }catch(Exception e){
+            throw new RuntimeException("Error inesperado");
+        }
+    }
 }
