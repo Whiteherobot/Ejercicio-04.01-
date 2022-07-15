@@ -298,11 +298,17 @@ public class VistaCliente extends javax.swing.JInternalFrame  {
     }//GEN-LAST:event_txtFechaActionPerformed
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-         if(JOptionPane.showConfirmDialog(this, "¿Está seguro de que desea eliminar este equipo?") == 0)
+        try{
+        if(JOptionPane.showConfirmDialog(this, "¿Está seguro de que desea eliminar este equipo?") == 0)
         {
             clienteControl.eliminar(csi.getText());
             JOptionPane.showMessageDialog(this, "Eliminado correctamente", "", JOptionPane.INFORMATION_MESSAGE);
             actualizarTabla();
+        }
+           }
+       catch (RuntimeException e)
+        {
+            JOptionPane.showMessageDialog(this, e.getMessage(), "", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_jButton3ActionPerformed
 
